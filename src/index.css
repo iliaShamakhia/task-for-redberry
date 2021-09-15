@@ -73,10 +73,13 @@ body {
 	margin-top: 89px;
 	flex-wrap: wrap;
 }
-.redberry{
+.redberry-container{
 	margin-top: 0.5%;
 }
-#cp{
+.redberry{
+  margin-right: 1px;
+}
+.cp{
 	margin-bottom: 20px;
 }
 #step-count{
@@ -165,6 +168,35 @@ body {
   border: none;
   background-color: transparent;
 }
+.radio-form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+.question{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  color: #000000;
+}
+.radio-label{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 24px;
+  color: #232323;
+  margin: 3% 0 0 3%;
+}
+.form-2-input{
+  margin: 3% 0 0 3%;
+}
+.hidden{
+  display: none;
+}
+
+
+
 
 #final-btn-container{
   display: flex;

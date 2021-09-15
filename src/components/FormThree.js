@@ -14,16 +14,16 @@ const FormThree = (props) => {
         <div className='container'>
             <div className='inside'>
                 <div className='top'>
-                    <div className='redberry'>
-                        <img id='r1' src={vector_r} alt='r1'/>
-                        <img id='e1' src={vector_e} alt='e1'/>
-                        <img id='d' src={vector_d} alt='d'/>
-                        <img id='b' src={vector_b} alt='b'/>
-                        <img id='e2' src={vector_e} alt='e2'/>
-                        <img id='r2' src={vector_r} alt='r2'/>
-                        <img id='r3' src={vector_r} alt='r3'/>
-                        <img id='y' src={vector_y} alt='y'/>
-                        <img id='cp' src={vector_cp} alt='cp'/>
+                    <div className='redberry-container'>
+                        <img className='redberry' src={vector_r} alt='r'/>
+                        <img className='redberry' src={vector_e} alt='e'/>
+                        <img className='redberry' src={vector_d} alt='d'/>
+                        <img className='redberry' src={vector_b} alt='b'/>
+                        <img className='redberry' src={vector_e} alt='e'/>
+                        <img className='redberry' src={vector_r} alt='r'/>
+                        <img className='redberry' src={vector_r} alt='r'/>
+                        <img className='redberry' src={vector_y} alt='y'/>
+                        <img className='cp' src={vector_cp} alt='cp'/>
                     </div>
                     <p id='step-count'>3/4</p>
                     <div id='top-line'></div>

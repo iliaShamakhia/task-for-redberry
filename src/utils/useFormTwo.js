@@ -1,61 +1,64 @@
 import { useState, useEffect } from 'react'
 
-const useForm = (func, validate) => {
+const useFormTwo = (func, validate) => {
 
-    const [values,setValues] = useState({
-        vaccinated:'',
+    const [formTwoValues,setFormTwoValues] = useState({
+        hadCovid:'',
         tested:'',
         dateOfTest:'',
         antigenCount:'',
         dateInfected:'',
     })
 
-    const [errors,setErrors] =useState({})
+    const [formTwoErrors,setFormTwoErrors] =useState({})
 
-    const handleChange = e => {
+    const handleFormTwoChange = e => {
         const { name, value } = e.target
-        if(name==='vaccinated'){
-            setValues({
-                ...values,
+        if(name==='hadCovid'){
+            setFormTwoValues({
+                ...formTwoValues,
                 [name]: value,
                 tested:''
             })
         }else{
-            setValues({
-            ...values,
+            setFormTwoValues({
+            ...formTwoValues,
             [name]: value
             })
         }
     }
 
-    const handleSubmit = e => {
+    const handleFormTwoSubmit = e => {
         e.preventDefault()
-        setErrors(validate(values))
+        setFormTwoErrors(validate(formTwoValues))
+        setTimeout(()=>{
+            setFormTwoErrors({})
+        },3000)
     }
 
     useEffect(
         () => {
-            if(errors.vaccinated !== ''){
-                if(values.vaccinated === 'no' || values.vaccinated === 'infected'){
+            if(formTwoErrors.hadCovid !== ''){
+                if(formTwoValues.hadCovid === 'no' || formTwoValues.hadCovid === 'infected'){
                     func()
                 }
             }
-            if(errors.vaccinated !== '' && errors.tested !== ''){
-                if(values.tested === 'yes'){
-                    if(errors.dateOfTest === '' && errors.antigenCount === ''){
+            if(formTwoErrors.hadCovid !== '' && formTwoErrors.tested !== ''){
+                if(formTwoValues.tested === 'yes'){
+                    if(formTwoErrors.dateOfTest === '' && formTwoErrors.antigenCount === ''){
                         func()
                     }
-                }else if(values.tested === 'no'){
-                    if(errors.dateInfected === ''){
+                }else if(formTwoValues.tested === 'no'){
+                    if(formTwoErrors.dateInfected === ''){
                         func()
                     }
                 }
             }
         },
-        [errors]
+        [formTwoErrors]
     )
 
-    return { handleChange, handleSubmit, values, errors }
+    return { handleFormTwoChange, handleFormTwoSubmit, formTwoValues, formTwoErrors }
 }
 
-export default useForm
+export default useFormTwo

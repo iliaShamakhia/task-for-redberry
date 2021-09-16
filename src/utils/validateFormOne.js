@@ -6,7 +6,7 @@ const validate = (values) => {
     }
 
     const isRedberryEmail = (email) => {
-        return /^[a-z0-9](\.?[a-z0-9]){4,}@redberry\.ge$/.test(email)
+        return /^[a-z0-9](\.?[a-z0-9]){3,}@redberry\.ge$/.test(email)
     }
     
     const isEmail = (email) =>{

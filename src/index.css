@@ -15,17 +15,25 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.start-container{
+  width: 1920px;
+  height: 1080px;
+	background-color: #EAEAEA;
+	display: flex;
+	flex-direction: column;
+  justify-content: center;
+	align-items: center;
+  margin: 50px;
+}
 #start-logo-container{
-  position: absolute;
   width: 455px;
   height: 278px;
-  left: calc(50% - 455px/2 - 0.5px);
-  top: 262px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #EAEAEA;
 }
 #start-logo{
-  position: absolute;
   width: 100px;
   height: 100px;
   left: calc(50% - 100px/2);
@@ -33,25 +41,34 @@ body {
 }
 
 #start-button {
-  position: absolute;
   width: 498px;
   height: 20px;
-  left: calc(50% - 498px/2);
-  top: 544px;
-  font-family: TBC Contractica CAPS;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 34px;
   line-height: 36px;
   text-align: center;
-  text-transform: lowercase;
-  font-feature-settings: 'case' on;
   color: #232323;
   padding-top: 0;
   border: none;
   background-color: transparent;
+  display: flex;
+  align-items: center;
 }
-
+#start-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20%;
+}
+#start-text{
+  width:40%;
+  margin-left: 30%;
+}
+#start-text:hover{
+  cursor: pointer;
+  text-shadow: 3px 3px #999999;
+}
 .container{
 	width: 1920px;
   height: 1080px;
@@ -137,8 +154,15 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-
   color: #F15524;
+}
+.error-msg-form2{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F15524;
+  margin: 1% 0 0 3%;
 }
 #hint-line{
 	border: 0.8px solid #000000;
@@ -168,6 +192,9 @@ body {
   border: none;
   background-color: transparent;
 }
+.navigation-btn:hover{
+  cursor: pointer;
+}
 .radio-form{
   display: flex;
   flex-direction: column;
@@ -194,8 +221,12 @@ body {
 .hidden{
   display: none;
 }
-
-
+.form-3-tip{
+  margin-left: 7%;
+}
+.p-form3{
+  margin: 2%;
+}
 
 
 #final-btn-container{

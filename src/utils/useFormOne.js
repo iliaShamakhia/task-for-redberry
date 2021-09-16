@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useForm = (func, validate) => {
+const useFormOne = (func, validate) => {
   
   const [values, setValues] = useState({
     name: '',
@@ -35,4 +35,4 @@ const useForm = (func, validate) => {
   return { handleChange, handleSubmit, values, errors }
 }
 
-export default useForm
+export default useFormOne

@@ -1,13 +1,13 @@
-const validate = (values) => {
+const validateFormTwo = (values) => {
 
     const isDate = (date) => {
-        return /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/.test(date)
+        return /(0?[1-9]|[12]\d|30|31)[^\w\d\r\n:](0?[1-9]|1[0-2])[^\w\d\r\n:](\d{4}|\d{2})/.test(date)
     }
-
+    
     let errors = {}
     
-    if(values.vaccinated === ''){
-        errors.vaccinated = 'chose one'
+    if(values.hadCovid === ''){
+        errors.hadCovid = 'chose one'
     }
 
     if(values.tested === ''){
@@ -16,7 +16,7 @@ const validate = (values) => {
 
     if(values.dateOfTest === ''){
         errors.dateOfTest = 'თარიღის შეყვანა სავალდებულოა'
-    }else if(isDate(values.dateOfTest)){
+    }else if(!isDate(values.dateOfTest)){
         errors.dateOfTest = 'ფორმატი აუცილებლად უნდა იყოს Date'
     }else{
         errors.dateOfTest = ''
@@ -25,14 +25,14 @@ const validate = (values) => {
     if(values.antigenCount === ''){
         errors.antigenCount = 'ანტისხეულების რაოდენობის შეყვანა სავალდებულოა'
     }else if(isNaN(values.antigenCount)){
-        errors.antigenCount = 'მნიშვნელობა აუცილებლად უნდა იყოს Number: შეიყვანეთ რიცხვითი მნიშნელობა'
+        errors.antigenCount = 'შეიყვანეთ რიცხვითი მნიშნელობა'
     }else{
         errors.antigenCount = ''
     }
 
     if(values.dateInfected === ''){
-        errors.dateInfected = 'required: თარიღის შეყვანა სავალდებულოა'
-    }else if(isDate(values.dateInfected)){
+        errors.dateInfected = 'თარიღის შეყვანა სავალდებულოა'
+    }else if(!isDate(values.dateInfected)){
         errors.dateInfected = 'ფორმატი აუცილებლად უნდა იყოს Date'
     }else{
         errors.dateInfected = ''
@@ -41,4 +41,4 @@ const validate = (values) => {
     return errors
 }
 
-export default validate
+export default validateFormTwo

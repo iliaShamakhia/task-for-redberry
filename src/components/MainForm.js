@@ -6,9 +6,25 @@ import FormThree from "./FormThree";
 import FormFour from "./FormFour";
 import FormFive from "./FormFive";
 import validate from "../utils/validateFormOne"
+import validateFormTwo from "../utils/validateFormTwo";
+import useFormTwo from '../utils/useFormTwo'
+import validateFormThree from "../utils/validateFormThree";
+import useFormThree from "../utils/useFormThree";
 
 const MainForm = () => {
+
     const [step, setStep] = useState(0)
+
+    const nextStep = () => {
+        setStep(step + 1)
+    }
+
+    const prevStep = () => {
+        setStep(step - 1)
+    }
+
+    const { handleFormTwoChange, handleFormTwoSubmit, formTwoValues, formTwoErrors } = useFormTwo(nextStep,validateFormTwo)
+    const { handleFormThreeChange, handleFormThreeSubmit, formThreeValues, formThreeErrors } = useFormThree(nextStep,validateFormThree)
 
     const [values, setValues] = useState({
         name: '',
@@ -30,14 +46,6 @@ const MainForm = () => {
     const handleSubmit = e => {
         e.preventDefault()
         setErrors(validate(values))
-    }
-
-    const nextStep = () => {
-        setStep(step + 1)
-    }
-
-    const prevStep = () => {
-        setStep(step - 1)
     }
 
     useEffect(
@@ -71,15 +79,28 @@ const MainForm = () => {
                 <FormTwo
                     prevStep={prevStep}
                     nextStep={nextStep}
+                    handleChange={handleFormTwoChange}
+                    handleSubmit={handleFormTwoSubmit}
+                    values={formTwoValues}
+                    errors={formTwoErrors}
                 />
             )
         case 3:
             return(
-                <FormThree prevStep={prevStep} nextStep={nextStep}/>
+                <FormThree
+                    prevStep={prevStep}
+                    nextStep={nextStep}
+                    handleChange={handleFormThreeChange}
+                    handleSubmit={handleFormThreeSubmit}
+                    values={formThreeValues}
+                />
             )
         case 4:
             return(
-                <FormFour prevStep={prevStep} nextStep={nextStep}/>
+                <FormFour
+                    prevStep={prevStep}
+                    nextStep={nextStep}
+                />
             )
             case 5:
                 return(

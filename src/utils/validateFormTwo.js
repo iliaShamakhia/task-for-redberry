@@ -7,11 +7,11 @@ const validateFormTwo = (values) => {
     let errors = {}
     
     if(values.hadCovid === ''){
-        errors.hadCovid = 'chose one'
+        errors.hadCovid = 'choose one'
     }
 
     if(values.tested === ''){
-        errors.tested = 'chose one'
+        errors.tested = 'choose one'
     }
 
     if(values.dateOfTest === ''){

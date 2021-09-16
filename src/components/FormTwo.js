@@ -8,7 +8,6 @@ import vector_cp from '../images/vector-cp.png'
 import vector_next from '../images/vector-next.png'
 import vector_prev from '../images/vector-prev.png'
 import side_img_2 from '../images/side-img-2.png'
-//import validate from '../utils/validateFormTwo'
 
 const FormTwo = (props) => {
     const {prevStep, handleChange, handleSubmit, values, errors } = props
@@ -28,8 +27,8 @@ const FormTwo = (props) => {
                         <img className='redberry' src={vector_y} alt='y'/>
                         <img className='cp' src={vector_cp} alt='cp'/>
                     </div>
-                    <p id='step-count'>2/4</p>
-                    <div id='top-line'></div>
+                    <p className='step-count'>2/4</p>
+                    <div className='top-line'></div>
                 </div>
                 <div className='mid'>
                     <div className='left'>

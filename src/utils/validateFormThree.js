@@ -2,13 +2,13 @@ const validateFormThree = (values) => {
     let errors = {}
 
     if(values.vaccinated === ''){
-        errors.vaccinated = 'chose one'
+        errors.vaccinated = 'choose one'
     }
     if(values.stage === ''){
-        errors.stage = 'chose one'
+        errors.stage = 'choose one'
     }
     if(values.waiting === ''){
-        errors.waiting = 'chose one'
+        errors.waiting = 'choose one'
     }
 
     return errors

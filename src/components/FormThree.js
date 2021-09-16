@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import vector_r from '../images/vector-r.png'
 import vector_e from '../images/vector-e.png'
 import vector_d from '../images/vector-d.png'
@@ -28,8 +28,8 @@ const FormThree = (props) => {
                         <img className='redberry' src={vector_y} alt='y'/>
                         <img className='cp' src={vector_cp} alt='cp'/>
                     </div>
-                    <p id='step-count'>3/4</p>
-                    <div id='top-line'></div>
+                    <p className='step-count'>3/4</p>
+                    <div className='top-line'></div>
                 </div>
                 <div className='mid'>
                     <div className='left'>

@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FormZero from "./FormZero";
 import FormOne from "./FormOne";
 import FormTwo from "./FormTwo";
 import FormThree from "./FormThree";
 import FormFour from "./FormFour";
 import FormFive from "./FormFive";
-import validate from "../utils/validateFormOne"
-import validateFormTwo from "../utils/validateFormTwo";
+import useFormOne from "../utils/useFormOne";
+import validateFormOne from "../utils/validateFormOne"
 import useFormTwo from '../utils/useFormTwo'
-import validateFormThree from "../utils/validateFormThree";
+import validateFormTwo from "../utils/validateFormTwo";
 import useFormThree from "../utils/useFormThree";
+import validateFormThree from "../utils/validateFormThree";
+import useFormFour from "../utils/useFormFour";
+import validateFormFour from "../utils/validateFormFour";
 
 const MainForm = () => {
 
@@ -23,40 +26,10 @@ const MainForm = () => {
         setStep(step - 1)
     }
 
+    const { handleChange, handleSubmit, values, errors } = useFormOne(nextStep, validateFormOne)
     const { handleFormTwoChange, handleFormTwoSubmit, formTwoValues, formTwoErrors } = useFormTwo(nextStep,validateFormTwo)
-    const { handleFormThreeChange, handleFormThreeSubmit, formThreeValues, formThreeErrors } = useFormThree(nextStep,validateFormThree)
-
-    const [values, setValues] = useState({
-        name: '',
-        lastName: '',
-        email: ''
-    })
-
-    const [errors, setErrors] = useState({})
-    
-
-    const handleChange = e => {
-        const { name, value } = e.target
-        setValues({
-          ...values,
-          [name]: value
-        })
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault()
-        setErrors(validate(values))
-    }
-
-    useEffect(
-        () => {
-          if(errors.name===''&&errors.lastName===''&&errors.email===''){
-            nextStep()
-          }
-        },
-        [errors]
-    )
-    
+    const { handleFormThreeChange, handleFormThreeSubmit, formThreeValues } = useFormThree(nextStep,validateFormThree)
+    const { handleFormFourChange, handleFormFourSubmit, formFourValues } = useFormFour(nextStep,validateFormFour)
 
 
     switch(step){
@@ -99,7 +72,9 @@ const MainForm = () => {
             return(
                 <FormFour
                     prevStep={prevStep}
-                    nextStep={nextStep}
+                    handleChange={handleFormFourChange}
+                    handleSubmit={handleFormFourSubmit}
+                    values={formFourValues}
                 />
             )
             case 5:

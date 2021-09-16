@@ -31,9 +31,6 @@ const useFormTwo = (func, validate) => {
     const handleFormTwoSubmit = e => {
         e.preventDefault()
         setFormTwoErrors(validate(formTwoValues))
-        setTimeout(()=>{
-            setFormTwoErrors({})
-        },3000)
     }
 
     useEffect(

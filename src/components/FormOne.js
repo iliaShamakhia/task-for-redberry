@@ -28,8 +28,8 @@ const FormOne = (props) => {
                         <img className='redberry' src={vector_y} alt='y'/>
                         <img className='cp' src={vector_cp} alt='cp'/>
                     </div>
-                    <p id='step-count'>1/4</p>
-                    <div id='top-line'></div>
+                    <p className='step-count'>1/4</p>
+                    <div className='top-line'></div>
                 </div>
                 <div className="mid">
                     <div className="left">

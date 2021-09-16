@@ -1,12 +1,12 @@
 
-const validate = (values) => {
+const validateFormOne = (values) => {
 
     const isAlpha = (name) => {
         return /^[A-Za-zა-ჰ]+$/.test(name)
     }
 
     const isRedberryEmail = (email) => {
-        return /^[a-z0-9](\.?[a-z0-9]){3,}@redberry\.ge$/.test(email)
+        return /^[a-z0-9](\.?[a-z0-9]){2,}@redberry\.ge$/.test(email)
     }
     
     const isEmail = (email) =>{
@@ -52,4 +52,4 @@ const validate = (values) => {
     return errors
 }
 
-export default validate
+export default validateFormOne

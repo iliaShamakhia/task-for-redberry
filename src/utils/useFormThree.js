@@ -34,7 +34,7 @@ const useFormThree = (func, validate) => {
 
     useEffect(
         () => {
-            if(formThreeErrors.vaccinated !== ''){
+            if(formThreeValues.vaccinated !== ''){
                 if(formThreeValues.vaccinated === 'yes' && formThreeValues.stage !== ''){
                     func()
                 }else if(formThreeValues.vaccinated === 'no' && formThreeValues.waiting !== ''){

@@ -6,9 +6,7 @@ const FormZero = (props) => {
         <div className='start-container'>
             <div id='start-logo-container'>
                 <img id='start-logo' src={start} alt='start'/>
-            </div>
-            <div id='start-button-container'>
-                <button id='start-button' onClick={props.nextStep}><p id='start-text'>კითხვარის დაწყება</p></button>
+                <h2 id='start-text' onClick={props.nextStep}>კითხვარის დაწყება</h2>
             </div>
         </div>
     )

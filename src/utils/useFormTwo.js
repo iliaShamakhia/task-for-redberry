@@ -20,6 +20,12 @@ const useFormTwo = (func, validate) => {
                 [name]: value,
                 tested:''
             })
+        }else if(name==='tested'){
+            setFormTwoValues({
+                ...formTwoValues,
+                [name]: value
+            })
+            setFormTwoErrors({})
         }else{
             setFormTwoValues({
             ...formTwoValues,

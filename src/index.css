@@ -29,41 +29,24 @@ body {
   width: 455px;
   height: 278px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background: #EAEAEA;
 }
 #start-logo{
   width: 100px;
-  height: 100px;
-  left: calc(50% - 100px/2);
-  top: 78px;
+  border-radius: 50%;
 }
 
-#start-button {
-  width: 498px;
-  height: 20px;
+#start-text{
+  width: 50%;
   font-style: normal;
   font-weight: bold;
-  font-size: 34px;
+  font-size: 30px;
   line-height: 36px;
   text-align: center;
   color: #232323;
-  padding-top: 0;
-  border: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-}
-#start-button-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20%;
-}
-#start-text{
-  width:40%;
-  margin-left: 30%;
 }
 #start-text:hover{
   cursor: pointer;
@@ -294,3 +277,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
